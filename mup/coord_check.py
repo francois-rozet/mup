@@ -159,8 +159,9 @@ def _record_coords(records, width, modulename, t,
             get_stat(d, output, output_fdict)
 
             # input stats
-            d = {'width': width, 'module': modulename + ':in', 't': t}
-            get_stat(d, input, input_fdict)
+            if input_fdict:
+                d = {'width': width, 'module': modulename + ':in', 't': t}
+                get_stat(d, input, input_fdict)
 
             # param stats
             if param_fdict:
